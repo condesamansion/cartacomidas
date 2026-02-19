@@ -164,3 +164,23 @@ body {
     .plato-precio { font-size: 1.9rem; }
     .plato-descripcion { font-size: 0.85rem; }
 }
+
+/* --- BOTÓN DE WHATSAPP --- */
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366; /* Verde oficial de WhatsApp */
+    color: #ffffff !important;
+    text-decoration: none;
+    font-family: 'Bree Serif', serif;
+    font-size: 1.3rem;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.05); /* Se agranda un poquito al tocarlo */
+}
