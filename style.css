@@ -1,0 +1,166 @@
+/* --- style.css --- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Bree Serif', serif;
+    background-color: #0d0d0d; /* Fondo base bien oscuro */
+    
+    /* TEXTURA CSS: Líneas diagonales sutiles imitando el menú impreso */
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.02) 0px,
+        rgba(255, 255, 255, 0.02) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+    
+    color: #e0e0e0; 
+    padding: 15px 10px; 
+    max-width: 800px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.cabecera-logo {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+}
+
+.logo-img {
+    max-width: 220px; 
+    height: auto;
+}
+
+/* --- BOTONES DEL ACORDEÓN (SECCIONES) --- */
+.acordeon-boton {
+    background-color: #1a1a1a; 
+    color: #d4af37; 
+    font-family: 'Medula One', sans-serif; 
+    cursor: pointer;
+    padding: 12px 15px; 
+    width: 100%;
+    text-align: left;
+    border: 1px solid #333; 
+    border-left: 4px solid #d4af37; 
+    outline: none;
+    font-size: 2.8rem; 
+    font-weight: normal;
+    border-radius: 6px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+.acordeon-boton:hover, .acordeon-boton:focus {
+    background-color: #222;
+}
+
+.acordeon-contenido {
+    padding: 5px 10px; 
+    display: none; 
+    overflow: hidden;
+}
+
+/* --- TÍTULO DE GRUPOS (Ej: MILANESAS, HAMBURGUESAS) --- */
+.grupo-titulo {
+    color: #d4af37; /* El mismo dorado de los botones */
+    font-family: 'Medula One', sans-serif;
+    font-size: 3rem; 
+    margin: 25px 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+/* --- PLATOS (Ahora son listas flotantes, no cajas) --- */
+.plato-item {
+    padding: 8px 0;
+    margin-bottom: 5px;
+    border-bottom: 1px dotted rgba(255,255,255,0.1); /* Línea punteada muy sutil para separar */
+    transition: 0.3s;
+}
+
+/* El último plato del grupo no necesita línea debajo */
+.plato-item:last-child {
+    border-bottom: none;
+}
+
+.plato-titulo {
+    font-family: 'Medula One', sans-serif; 
+    font-size: 2.3rem; 
+    font-weight: normal;
+    color: #ffffff; /* Texto blanco puro como en tu menú */
+    margin: 0 0 2px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Alineamos abajo para que el precio no vuele */
+    gap: 10px;
+    letter-spacing: 1px;
+}
+
+.plato-precio {
+    color: #ffffff; /* Precio en blanco, idéntico a tu foto */
+    white-space: nowrap;
+    font-family: 'Medula One', sans-serif;
+    font-size: 2.3rem; 
+}
+
+.plato-descripcion {
+    font-family: 'Bree Serif', serif; 
+    font-size: 0.95rem;
+    color: #aaaaaa; /* Gris clarito */
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+/* --- PLATO NO DISPONIBLE --- */
+.plato-agotado {
+    opacity: 0.4; /* Lo oscurecemos */
+}
+
+.plato-agotado .plato-precio {
+    text-decoration: line-through;
+    color: #777; 
+}
+
+.badge-agotado {
+    background-color: #b71c1c; 
+    color: white;
+    font-family: Arial, sans-serif; 
+    font-size: 0.65rem;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+#estado-carga {
+    text-align: center;
+    color: #d4af37;
+    margin-top: 20px;
+    font-style: italic;
+    font-family: 'Bree Serif', serif;
+}
+
+@media (max-width: 400px) {
+    .logo-img { max-width: 180px; }
+    .acordeon-boton { font-size: 2.4rem; padding: 10px 12px; }
+    .grupo-titulo { font-size: 2.6rem; margin-top: 15px; }
+    .plato-titulo { font-size: 1.9rem; }
+    .plato-precio { font-size: 1.9rem; }
+    .plato-descripcion { font-size: 0.85rem; }
+}

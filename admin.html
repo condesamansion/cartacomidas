@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control - Buts Pub</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="cabecera-admin">
+        <img src="img/logoadmin.png" alt="Logo Admin Buts Pub" class="logo-admin">
+        <h1>Panel de Control</h1>
+    </div>
+
+    <div class="formulario-container">
+        <form id="form-plato">
+            <input type="hidden" id="plato-id" value="">
+
+            <label for="seccion">Sección:</label>
+            <input list="lista-secciones" id="seccion" placeholder="Ej: PRINCIPALES, ENTRADAS..." autocomplete="off" spellcheck="true" required>
+            <datalist id="lista-secciones"></datalist>
+
+            <label for="grupo">Grupo:</label>
+            <input list="lista-grupos" id="grupo" placeholder="Ej: PIZZAS, LOMOS..." autocomplete="off" spellcheck="true" required>
+            <datalist id="lista-grupos"></datalist>
+
+            <label for="tipo">Nombre / Variante del Plato:</label>
+            <input list="lista-tipos" id="tipo" placeholder="Ej: Napolitana" autocomplete="off" spellcheck="true" required>
+            <datalist id="lista-tipos"></datalist>
+
+            <label for="descripcion">Descripción / Ingredientes:</label>
+            <textarea id="descripcion" rows="3" placeholder="Ej: Salsa de tomate, muzzarella..." spellcheck="true"></textarea>
+
+            <label for="precio">Precio ($):</label>
+            <input type="number" id="precio" placeholder="Ej: 6500 (Dejar vacío para 'Consultar')">
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="disponible" checked>
+                <label for="disponible" style="margin-top: 0;">Plato Disponible en la Carta</label>
+            </div>
+
+            <div class="botones-accion">
+                <button type="button" id="btn-guardar" class="btn-verde">💾 Guardar / Actualizar</button>
+                <button type="button" id="btn-eliminar" class="btn-rojo">🗑️ Eliminar</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="contenedor-edicion-rapida" style="display: none;">
+        <h2 style="color: #333; margin-bottom: 5px;">⚡ Edición Rápida</h2>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">Modifica el precio y toca el botón 💾 en esa fila para guardar al instante.</p>
+        
+        <input type="text" id="buscador-rapido" placeholder="🔍 Buscar plato, sección o grupo..." style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ced4da; border-radius: 6px; font-size: 1.1rem; border-left: 4px solid #f59e0b;">
+
+        <div id="lista-edicion-rapida">
+            </div>
+    </div>
+
+    <div class="enlaces-rapidos" style="margin-top: 25px;">
+        <button id="btn-toggle-edicion" class="btn-naranja">⚡ Edición Rápida de Precios</button>
+        <a href="index.html" target="_blank" class="btn-ver-carta">👁️ Ver Carta en Vivo</a>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

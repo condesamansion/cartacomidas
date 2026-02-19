@@ -1,0 +1,70 @@
+/* --- admin.css --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #e9ecef; padding: 20px 10px; max-width: 600px; margin: 0 auto; }
+
+.cabecera-admin { text-align: center; margin-bottom: 15px; }
+
+.logo-admin { width: 100%; max-width: 280px; height: auto; margin-bottom: 5px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2)); }
+
+.cabecera-admin h1 { color: #333; font-size: 1.8rem; }
+
+.enlaces-rapidos { display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; }
+
+.btn-ver-carta, .btn-naranja { text-align: center; padding: 12px; border-radius: 6px; font-weight: bold; font-size: 1rem; border: none; cursor: pointer; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: 0.3s; }
+.btn-ver-carta { background-color: #3b82f6; color: white; }
+.btn-ver-carta:hover { background-color: #2563eb; }
+.btn-naranja { background-color: #f59e0b; color: white; }
+.btn-naranja:hover { background-color: #d97706; }
+
+/* Estilos Formulario Normal */
+.formulario-container { background: white; padding: 25px 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 5px solid #3b82f6; }
+label { display: block; margin-top: 15px; font-weight: bold; color: #495057; font-size: 0.95rem; }
+input[type="text"], input[type="number"], textarea, input[list] { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ced4da; border-radius: 6px; font-size: 1rem; background-color: #f8f9fa; }
+input:focus, textarea:focus { outline: none; border-color: #3b82f6; background-color: #fff; }
+
+.checkbox-container { display: flex; align-items: center; margin-top: 20px; padding: 10px; background-color: #eef2ff; border-radius: 6px; border-left: 4px solid #4f46e5; }
+.checkbox-container input[type="checkbox"] { width: 20px; height: 20px; margin-top: 0; margin-right: 10px; cursor: pointer; }
+
+.botones-accion { display: flex; gap: 10px; margin-top: 25px; }
+button { flex: 1; padding: 15px; color: white; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.btn-verde { background-color: #10b981; }
+.btn-verde:hover { background-color: #059669; }
+.btn-rojo { background-color: #ef4444; }
+.btn-rojo:hover { background-color: #dc2626; }
+
+/* --- NUEVOS ESTILOS: TARJETAS DE EDICIÓN RÁPIDA (Optimizadas para Celular) --- */
+#contenedor-edicion-rapida { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 5px solid #f59e0b; }
+
+.fila-edicion { 
+    display: flex; 
+    flex-direction: column; /* Convierte la fila en una tarjeta apilada */
+    background: #ffffff; 
+    padding: 15px; 
+    margin-bottom: 15px; 
+    border-radius: 8px; 
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #f59e0b; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    gap: 12px; 
+}
+
+/* Fila Superior: Nombres y Botón Eliminar */
+.fila-info-rapida { display: flex; justify-content: space-between; align-items: flex-start; }
+.textos-rapidos strong { font-size: 1.25rem; color: #1e293b; display: block; line-height: 1.1; }
+.textos-rapidos small { color: #64748b; font-size: 0.8rem; text-transform: uppercase; display: block; margin-top: 4px; }
+.btn-eliminar-rapido { background: #fee2e2; color: #ef4444; border: none; border-radius: 6px; padding: 8px 15px; font-size: 1.1rem; cursor: pointer; margin: 0; flex: 0 0 auto; transition: 0.3s; }
+
+/* Fila del Medio: Precio y Checkbox */
+.controles-rapidos { display: flex; gap: 10px; align-items: stretch; }
+
+.input-precio-wrapper { display: flex; align-items: center; flex: 1.5; background: #f8f9fa; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0 10px; }
+.input-precio-wrapper span { color: #64748b; font-weight: bold; font-size: 1.1rem; }
+.input-precio-wrapper input { border: none; background: transparent; width: 100%; padding: 12px 10px; font-size: 1.1rem; font-weight: bold; margin-top: 0; color: #0f172a; }
+.input-precio-wrapper input:focus { outline: none; }
+
+.check-disponible-wrapper { display: flex; align-items: center; gap: 8px; background: #eef2ff; border: 1px solid #c7d2fe; color: #4338ca; padding: 10px; border-radius: 6px; font-weight: bold; font-size: 0.9rem; cursor: pointer; margin-top: 0; flex: 1; justify-content: center; }
+.check-disponible-wrapper input { width: 20px; height: 20px; margin: 0; cursor: pointer; }
+
+/* Botón Guardar Gigante */
+.btn-guardar-rapido { background-color: #10b981; color: white; border: none; padding: 12px; border-radius: 6px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; margin: 0; display: flex; justify-content: center; align-items: center; gap: 8px; }
