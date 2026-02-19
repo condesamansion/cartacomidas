@@ -139,13 +139,26 @@ btnToggleEdicion.addEventListener('click', () => {
         formularioContainer.style.display = 'none';
         btnToggleEdicion.innerText = "🔙 Volver al Formulario Principal";
         btnToggleEdicion.style.backgroundColor = "#64748b"; 
-        dibujarListaRapida();
+
+        // 1. FORZAR EL SCROLL HACIA ARRIBA SUAVEMENTE
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // 2. PREVENIR EL "BLANCO": Revisamos si Google ya mandó los datos
+        if (platosGlobales.length === 0) {
+            listaEdicionRapida.innerHTML = '<div style="text-align:center; padding:40px 20px; color:#f59e0b; font-weight:bold; font-size:1.2rem;">⏳ Conectando con la base de datos...<br><br><span style="font-size:0.9rem; color:#666;">Por favor, cierra esta edición rápida, espera 2 segunditos y vuelve a abrirla.</span></div>';
+        } else {
+            dibujarListaRapida();
+        }
+
     } else {
         contenedorEdicionRapida.style.display = 'none';
         formularioContainer.style.display = 'block';
         btnToggleEdicion.innerText = "⚡ Edición Rápida de Precios";
         btnToggleEdicion.style.backgroundColor = "#f59e0b"; 
         buscadorRapido.value = ""; 
+        
+        // Volvemos a subir al volver al formulario normal
+        window.scrollTo({ top: 0, behavior: 'smooth' }); 
     }
 });
 

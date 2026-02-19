@@ -68,3 +68,12 @@ button { flex: 1; padding: 15px; color: white; border: none; border-radius: 6px;
 
 /* Botón Guardar Gigante */
 .btn-guardar-rapido { background-color: #10b981; color: white; border: none; padding: 12px; border-radius: 6px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; margin: 0; display: flex; justify-content: center; align-items: center; gap: 8px; }
+
+/* --- MAGIA UX: BUSCADOR FIJO --- */
+#buscador-rapido {
+    position: sticky;
+    top: 10px; /* Se queda a 10px del techo de la pantalla */
+    z-index: 1000; /* Asegura que flote por encima de las tarjetas */
+    background-color: #ffffff; /* Fondo blanco sólido para que no se transparente el texto de abajo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra elegante */
+}
